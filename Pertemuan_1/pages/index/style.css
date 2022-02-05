@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap');
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+#navmenu{
+    background-color: rgb(255, 236, 254);
+    border-radius: 0.3rem;
+    display: none;
+    margin: 0%;
+    text-align: center;
+}
+#navmenu p{
+    align-items: center;
+    display: flex;
+    height: 3rem;
+    justify-content: center;
+    margin: auto;
+}
+#burger{
+    align-items: center;
+    background-color: rgb(255, 236, 254);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    font-size: 1.5rem;
+    height: 2.5rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+    width: 2.5rem;
+}
+
+.container{
+    background-color: rgb(255, 255, 255);
+    border: 0.3rem;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-radius: 1rem;
+    box-shadow: 5px 5px rgb(167, 227, 255), -5px -5px pink;
+    color: rgb(85, 85, 85);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    max-width: 50rem;
+    margin: 1rem auto;
+    padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+    letter-spacing: 0.035rem;
+}
+.biodataContainer table{
+    font-family: 'Roboto', sans-serif;
+}
+.container h1{
+    font-family: 'Arial', sans-serif;
+    font-weight: 550;
+    text-align: center;
+}
+.photoContainer{
+    display: flex;
+    justify-content: center;
+}
+.photoContainer img{
+    border: 2px solid black;
+    box-shadow: 5px 5px black;
+    height: 13rem;
+    width: 9rem;
+}
+.skillCardContainer{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.skillCard{
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+    display: grid;
+    font-size: 0.8rem;
+    grid-template-rows: 20% 40% 40%;
+    grid-template-areas: "title" "image" "description";
+    height: 15rem;
+    margin: 0.5rem;
+    padding: 1.5rem;
+    width: 12rem;
+}
+.skillCard:hover{
+    background-color: rgb(195, 236, 195);
+    border: 0.2rem solid rgb(77, 77, 77);
+    cursor: pointer;
+    padding: 1.3rem;
+}
+.skillCardTitle{
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    grid-area: title;
+    letter-spacing: -0.01rem;
+}
+.skillIcon{
+    font-size: 3rem;
+    grid-area: image;
+    margin: 1rem 0 0.5rem 0;
+}
+.skillDesc{
+    grid-area: description;
+    text-align: justify;
+}
+.educationContainer{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.eduCard{
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+    display: grid;
+    font-size: 0.8rem;
+    grid-template-rows: 20% 40% 40%;
+    grid-template-areas: "title" "image" "description";
+    height: 15rem;
+    margin: 0.5rem;
+    padding: 1.5rem;
+    width: 20rem;
+}
+.eduCard:hover{
+    background-color: rgba(154, 204, 250, 0.815);
+    border: 0.2rem solid rgb(77, 77, 77);
+    cursor: pointer;
+    padding: 1.3rem;
+}
+.simLogo{
+    margin: auto;
+    width: 5rem;
+}
+.itsLogo{
+    margin: auto;
+    width: 5rem;
+}
+.eduG{
+    grid-area: description;
+}
+.contactContainer{
+    align-items: center;
+    display: flex;
+}
+.cIconContainer{
+    margin: auto;
+}
+.cIconContainer i{
+    cursor: pointer;
+    font-size: 3rem;
+    padding: 0 0.2rem 0 0.2rem;
+}
+.cIconContainer i:hover{
+    color: rgb(247, 103, 103);
+}
