@@ -2,36 +2,37 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 
+function sendResponseFile(url, req, res) {
+  fs.readFile(url, (err, data) => {
+    res.setHeader(
+      "Content-Type",
+      !path.extname(req.url) ? "text/html" : "text/css"
+    );
+    res.end(data);
+  });
+}
+
 const server = http.createServer((req, res) => {
   if (req.method === "GET") {
     if (req.url === "/") {
-      fs.readFile("./pages/index/index.html", (err, data) => {
-        res.setHeader("Content-Type", "text/html");
-        res.end(data);
-      });
+      sendResponseFile("./pages/index/index.html", req, res);
     } else if (req.url === "/contact") {
-      fs.readFile("./pages/contact/index.html", (err, data) => {
-        res.setHeader("Content-Type", "text/html");
-        res.end(data);
-      });
+      sendResponseFile("./pages/contact/index.html", req, res);
     } else {
-      fs.readFile("./pages" + req.url, (err, data) => {
-        res.setHeader("Content-Type", "text/css");
-        console.log(req.method);
-        console.log(err);
-        res.end(data);
-      });
+      sendResponseFile("./pages" + req.url, req, res);
     }
   } else {
-    let inputData = "\n";
+    let inputData = "";
     req.on("data", (data) => {
       inputData += data;
     });
     req.on("end", () => {
-        fs.writeFile("contacts.txt", inputData, {flag: "a"}, (e) => {
-            console.log(e);
-        });
+      inputData += "\n";
+      fs.writeFile("contacts.txt", inputData, { flag: "a" }, (e) => {
+        if(e) console.log(e);
+      });
     });
+    sendResponseFile("./pages/contact/index.html", req, res);
   }
 });
 
