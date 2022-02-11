@@ -1,2 +1,10 @@
-name=This+is+a+test+name&email=This+is+a+test+email&message=This+is+a+test+message
-name=This+is+a+test+name&email=This+is+a+test+name&message=This+is+a+test+name
+{
+	"name": "Alexander E",
+	"email": "allzllx19@gmail.com",
+	"message": "123123nj"
+}
+{
+	"name": "95959",
+	"email": "94994",
+	"message": "94949"
+}
