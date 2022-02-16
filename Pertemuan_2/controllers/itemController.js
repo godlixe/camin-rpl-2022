@@ -55,15 +55,18 @@ const updateItem = (req, res) => {
     }
   });
   fs.writeFileSync("./data.json", JSON.stringify(db));
-  res.status(200).send("Item successfully edited!");
+  return res.status(200).send("Item successfully edited!");
 };
 
 const deleteItem = (req, res) => {
+  if(!getData().find((o) => o.id == req.body.id)) return res.status(404).send("Data not found in database");
+
   let db = getData();
   db = db.filter((o) => {
     return o.id != req.body.id;
   });
   fs.writeFileSync("./data.json", JSON.stringify(db));
+  return res.status(200).send(`Item with id : ${req.body.id} has been deleted`);
 };
 
 module.exports = {
