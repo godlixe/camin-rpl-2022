@@ -16,10 +16,8 @@ const getAllItems = (req, res) => {
 };
 
 const getItemById = (req, res) => {
-  let item = getData().find((o) => o.id == req.body.id);
-  return item
-    ? res.send(item)
-    : res.status(404).send("Data not found in the database...");
+  let item = getData().find((o) => o.id == req.params.id);
+  return item? res.send(item): res.status(404).send("Data not found in the database...");
 };
 
 const createItem = (req, res) => {
