@@ -31,19 +31,14 @@ const createItem = async (req, res) => {
 const updateItem = async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, description, author } = req.body;
 
     const item = await Item.findByIdAndUpdate(
       id,
-      {
-        name,
-        description,
-        author,
-      },
+      req.body,
       {
         new: true,
         runValidators: true,
-        overwrite: true,
+        // overwrite: true,
       }
     );
     if (!item) {
@@ -68,7 +63,7 @@ const deleteItem = async (req, res) => {
     }
     return res.status(200).json({
       success: true,
-      msg: `Item with id : ${req.body.id} has been deleted`,
+      msg: `Item has been deleted`,
     });
   } catch (error) {
     return res.status(500).json({ success: false, msg: error });

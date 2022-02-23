@@ -3,15 +3,15 @@ const mongoose = require("mongoose");
 const itemSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: [true, "name belum diisi"]
     },
     description: {
         type: String,
-        required: true
+        required: [true, "description belum diisi"]
     },
     author: {
         type: String,
-        required: true
+        required: [true, "author belum diisi"]
     }
 })
 
